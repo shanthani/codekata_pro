@@ -1,14 +1,18 @@
 #shanu
 n=input()
-a=[]
-for i in range(65,91):
-    a.append(chr(i))
+a={}
 for j in range(97,123):
-    a.append(chr(j))
+    a.update({chr(j):0})
 n=n.replace(" ","")
-for k in n:
-    if k in a:
+n=n.lower()
+c=0
+for i in n:
+    s=n.count(i)
+    a.update({i:s})
+for x,y in a.items():
+    if y>=1:
         c=c+1
-    else:
-       
-
+if c==26:
+    print("yes")
+else:
+    print("no")
